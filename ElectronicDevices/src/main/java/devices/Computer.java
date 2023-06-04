@@ -1,3 +1,5 @@
+package devices;
+
 public abstract class Computer implements Device {
     @Override
     public abstract void charge();

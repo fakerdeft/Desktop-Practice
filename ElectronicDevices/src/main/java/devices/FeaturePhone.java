@@ -1,3 +1,5 @@
+package devices;
+
 public class FeaturePhone extends Phone {
     private static FeaturePhone fp;
 
@@ -13,16 +15,16 @@ public class FeaturePhone extends Phone {
 
     @Override
     public void charge() {
-
+        System.out.println("충전");
     }
 
     @Override
     public void enter() {
-
+        System.out.println("눌러서 입력");
     }
 
     @Override
     public void call() {
-
+        System.out.println("전화하기");
     }
 }
