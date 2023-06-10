@@ -13,8 +13,9 @@ public class ReadFile {
         return readfile;
     }
 
-    public String readUserDB() throws IOException {
-        String filePath = ReadFile.class.getResource("").getPath();
+    public void readFile() throws IOException {
+        String filePath = ReadFile.class.getResource("../src/main/db/test.txt").getPath();
+        System.out.println("filePath = " + filePath);
         BufferedReader reader = new BufferedReader(
                 new FileReader(filePath, StandardCharsets.UTF_8));
         String str;
@@ -25,10 +26,9 @@ public class ReadFile {
                 db.append(str);
                 continue;
             }
-            db.append(",").append(str);
+            db.append("/").append(str);
         }
 
         reader.close();
-        return db.toString();
     }
 }
