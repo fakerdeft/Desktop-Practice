@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -14,10 +15,13 @@ public class ReadFile {
     }
 
     public void readFile() throws IOException {
-        String filePath = ReadFile.class.getResource("../src/main/db/test.txt").getPath();
-        System.out.println("filePath = " + filePath);
+        String filePath = "src/main/db/test.txt";
+        File file = new File(filePath);
+        String path = file.getPath();
+        System.out.println("path = " + path);
+
         BufferedReader reader = new BufferedReader(
-                new FileReader(filePath, StandardCharsets.UTF_8));
+                new FileReader(path, StandardCharsets.UTF_8));
         String str;
         StringBuilder db = new StringBuilder();
 
@@ -28,6 +32,7 @@ public class ReadFile {
             }
             db.append("/").append(str);
         }
+        System.out.println("db = " + db);
 
         reader.close();
     }
