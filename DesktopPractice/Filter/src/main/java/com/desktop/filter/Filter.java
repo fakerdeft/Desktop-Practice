@@ -20,7 +20,8 @@ public class Filter implements jakarta.servlet.Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("doFilter 호출...");
-
+        String name = "가공된 이름";
+        request.setAttribute("가공된 이름",name);
         chain.doFilter(request, response);
 
         System.out.println("servlet 요청 수행 끝");
