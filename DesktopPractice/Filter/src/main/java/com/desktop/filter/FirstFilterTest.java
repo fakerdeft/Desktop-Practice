@@ -14,6 +14,8 @@ public class FirstFilterTest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("servlet 요청...");
+        
+        req.setAttribute("name", req.getAttribute("name"));
         RequestDispatcher view = req.getRequestDispatcher("/filterPage.jsp");
         view.forward(req, resp);
     }
